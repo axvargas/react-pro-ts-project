@@ -21,7 +21,7 @@ export const ShoppingPage = () => {
               product={product}
               initialValues={{
                 quantity: 4,
-                maxQuantity: 10
+                // maxQuantity: 10
               }}
             >
               {
