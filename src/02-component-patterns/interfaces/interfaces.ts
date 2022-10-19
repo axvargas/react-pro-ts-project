@@ -7,6 +7,8 @@ import { Props as ProductTitleProps} from "../components/ProductTitle";
 export interface ProductContextProps {
   counter: number;
   product: Product;
+  maxCount?: number;
+  isMaxCountReached: boolean;
   increaseBy: (value: number) => void;
 }
 
@@ -30,4 +32,19 @@ export interface OnChangeArgs {
 
 export interface ShoppingCartProduct extends Product {
   quantity: number;
+}
+
+export interface InitialValues {
+  quantity?: number;
+  maxQuantity?: number;
+}
+
+export interface ProductCardHandlers {
+  count: number;
+  isMaxCountReached: boolean;
+  maxCount?: number;
+  product: Product;
+
+  increaseBy: (value: number) => void;
+  reset: () => void;
 }
