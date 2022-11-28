@@ -1,6 +1,5 @@
 import { ProductButtons, ProductCard, ProductImage, ProductTitle } from '../components';
 import { products } from '../data/products';
-import '../styles/custom-styles.css';
 
 const product = products[0]
 
@@ -16,8 +15,7 @@ export const ShoppingPage = () => {
         flexWrap: 'wrap'
       }}>
             <ProductCard
-              key={product.id}
-              className="bg-dark text-white"
+              key={product.id} 
               product={product}
               initialValues={{
                 quantity: 4,
@@ -27,15 +25,9 @@ export const ShoppingPage = () => {
               {
                 ({reset, count, maxCount, isMaxCountReached, increaseBy})=>(
                   <>
-                    <ProductImage className='custom-image' style={{ boxShadow: '10px 10px 10px rgba(0,0,0,0.3)' }} />
-                    <ProductTitle className='text-white text-bold' />
-                    <ProductButtons className='custom-buttons' />
-                    <button onClick={reset}>reset</button>
-                    <button onClick={()=> increaseBy(-2)}>-2</button>
-                    <span>{count} - {maxCount}</span>
-                    {
-                      !isMaxCountReached && <button onClick={()=>increaseBy(+2)}>+2</button>
-                    }
+                    <ProductImage/>
+                    <ProductTitle />
+                    <ProductButtons />            
                   </>
                 )
               }
