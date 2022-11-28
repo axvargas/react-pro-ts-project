@@ -35,7 +35,7 @@ const FormikComponentsPage = () => {
       >
         {
           (formik) => (
-            <Form >
+            <Form noValidate>
               <label htmlFor="firstName">First Name</label>
               <Field
                 type="text"

@@ -31,7 +31,7 @@ const FormikBasicPage = () => {
     <div>
       <h1>Formik Basic Page</h1>
 
-      <form onSubmit={handleSubmit} >
+      <form onSubmit={handleSubmit} noValidate >
         <label htmlFor="firstName">First Name</label>
         <input
           type="text"
