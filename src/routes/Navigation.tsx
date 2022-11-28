@@ -2,8 +2,14 @@ import { BrowserRouter } from "react-router-dom";
 import { NavLink, Routes, Route, Navigate} from "react-router-dom";
 import logo from '../logo.svg';
 import Home from '../components/Home';
-import About from '../components/About';
-import Users from '../components/Users';
+
+import {
+  RegisterPage,
+  FormikBasicPage,
+  FormikComponentsPage,
+  FormikAbstractPage
+} from '../03-forms/pages'
+
 const Navigation = () => {
   return (
     <BrowserRouter>
@@ -22,22 +28,36 @@ const Navigation = () => {
             </li>
             <li>
               <NavLink 
-                to="about"
+                to="register"
                 className={({ isActive }) => isActive ? 'nav-active' : ''}
-              >About</NavLink>
+              >Register</NavLink>
             </li>
             <li>
               <NavLink 
-                to="users"
+                to="formik-basic"
                 className={({ isActive }) => isActive ? 'nav-active' : ''}
-              >Users</NavLink>
+              >Formik Basic</NavLink>
+            </li>
+            <li>
+              <NavLink 
+                to="formik-components"
+                className={({ isActive }) => isActive ? 'nav-active' : ''}
+              >Formik Components</NavLink>
+            </li>
+            <li>
+              <NavLink 
+                to="formik-abstract"
+                className={({ isActive }) => isActive ? 'nav-active' : ''}
+              >Formik Abstract</NavLink>
             </li>
           </ul>
         </nav>
         <Routes>
           <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="users" element={<Users />} />
+          <Route path="register" element={<RegisterPage />} />
+          <Route path="formik-basic" element={<FormikBasicPage />} />
+          <Route path="formik-components" element={<FormikComponentsPage />} />
+          <Route path="formik-abstract" element={<FormikAbstractPage />} />
           <Route path="/*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
